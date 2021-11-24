@@ -12,7 +12,7 @@
     <color name="github_header">#24292F</color>
     <color name="github_bg">#F5F8FA</color>
     <color name="github_grey">#F5F8FA</color>
+    <color name="github_grey_dark">#6E7781</color>
+    <color name="github_grey_text">#58606A</color>
     <color name="github_green">#2FA44F</color>
-
-
 </resources>

@@ -1,8 +1,8 @@
 package id.gwijaya94.mygithubusersapp.activity
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.gwijaya94.mygithubusersapp.ListUserAdapter
@@ -32,11 +32,10 @@ class MainActivity : AppCompatActivity() {
         val listUsersAdapter = ListUserAdapter(listUserData)
         listUsersAdapter.setOnItemClicked(object : ListUserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: User) {
-                Toast.makeText(
-                    this@MainActivity,
-                    "Kamu memilih " + data.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
+                val moveDetailUserActivity =
+                    Intent(this@MainActivity, DetailUserActivity::class.java)
+                moveDetailUserActivity.putExtra(DetailUserActivity.USER_DATA, data)
+                startActivity(moveDetailUserActivity)
             }
         })
         binding.rvListUsers.apply {
