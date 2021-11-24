@@ -11,24 +11,23 @@
     card_view:cardElevation="4dp"
     card_view:cardUseCompatPadding="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <View
-            android:id="@+id/decoration"
-            android:layout_width="8dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="8dp"
-            android:background="@color/github_green" />
+        android:background="@color/github_green">
 
         <RelativeLayout
+            android:id="@+id/user_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@color/white"
             android:gravity="center_vertical"
             android:padding="10dp"
-            android:paddingStart="0dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <ImageView
@@ -83,5 +82,5 @@
                 android:text="REPO COUNT"
                 android:textSize="16sp" />
         </RelativeLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
