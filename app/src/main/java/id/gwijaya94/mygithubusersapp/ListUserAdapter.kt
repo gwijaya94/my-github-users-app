@@ -39,8 +39,10 @@ class ListUserAdapter(private val listUsers: List<User>) :
         Glide.with(parentContext).load(imgResource).circleCrop()
             .into(holder.binding.imgItemPhoto)
         holder.binding.apply {
-            listItemFollower.text = userData.follower
+            listItemDesc.text = "@${userData.username.lowercase()}"
             listItemName.text = userData.name
+            imgItemPhoto.contentDescription = userData.name
+            repoValue.text = userData.repository
 
         }
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(userData) }
